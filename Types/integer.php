@@ -2,7 +2,6 @@
 include('../benchmark.php');
 
 
-
 # TEST 1
 for($i = 0; $i < 10000; $i++) {
 	$var = (int)'1a';
@@ -17,7 +16,6 @@ for($i = 0; $i < 10000; $i++) {
 }
 
 score('+');
-
 
 
 # TEST 3
