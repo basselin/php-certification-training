@@ -3,18 +3,20 @@ include('../benchmark.php');
 
 
 # TEST 1
+$var = 0;
 for($i = 0; $i < 100000; $i++) {
-	$var = 3200 / 2;
+	$var = $var + $i;
 }
 
-score('/2');
+score('= .. +');
 
 
 # TEST 2 - Winner!
+$var = 0;
 for($i = 0; $i < 100000; $i++) {
-	$var = 3200 >> 1;
+	$var += $i;
 }
 
-score('>>1');
+score('+=');
 
 

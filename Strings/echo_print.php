@@ -9,8 +9,15 @@ for($i = 0; $i < 10000; $i++) {
 
 score('echo');
 
-
 # TEST 2
+for($i = 0; $i < 10000; $i++) {
+	?><?php echo $i; ?><?php
+}
+
+score('&lt;?php echo');
+
+
+# TEST 3
 for($i = 0; $i < 10000; $i++) {
 	print $i;
 }
@@ -18,7 +25,15 @@ for($i = 0; $i < 10000; $i++) {
 score('print');
 
 
-# TEST 3 - Winner!
+# TEST 3
+for($i = 0; $i < 10000; $i++) {
+	?><?php print $i; ?><?php
+}
+
+score('&lt;?php print');
+
+
+# TEST 5 - Winner!
 for($i = 0; $i < 10000; $i++) {
 	?><?= $i ?><?php
 }
