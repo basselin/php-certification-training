@@ -4,7 +4,7 @@ include('../benchmark.php');
 
 # TEST 1
 for($i = 0; $i < 10000; $i++) {
-	$tmp_array = array('1', '2', '3', 'a', 'b', 'c');;
+	$tmp_array = array('1', '2', '3', 'a', 'b', 'c');
 }
 
 score('array()');
