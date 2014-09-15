@@ -2,11 +2,13 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', true);
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Array Functions - Certification PHP 5.5</title>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<title>Array Functions - Zend Certification PHP 5.5</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -363,7 +365,100 @@
 		
 		<h2>array_reduce() <span class="badge">4.0.5+</span></h2>
 		<div><?php
-			// http://php.net/manual/fr/function.array-reduce.php
+			$array = array(1, 2, 3, 4, 5);
+			var_dump(array_reduce($a, function($carry, $item) {
+				$carry *= $item;
+				return $carry;
+			}, 10));
+		?></div>
+		
+		
+		
+		<h2 class="text-danger">array_replace_recursive() &amp; array_replace() <span class="badge">5.3+</span></h2>
+		<div><?php
+			$base = array('citrus' => array( "orange") , 'berries' => array("blackberry", "raspberry"), );
+			$replacements = array('citrus' => array('pineapple'), 'berries' => array('blueberry'));
+			var_dump(array_replace_recursive($base, $replacements));
+			var_dump(array_replace($base, $replacements));
+		?></div>
+		
+		
+		
+		<h2>array_reverse() <span class="badge">4+</span></h2>
+		<div><?php
+			$array = array("php", 4.0, array("green", "red"));
+			var_dump(array_reverse($array));
+			var_dump(array_reverse($array, true));
+		?></div>
+		
+		
+		
+		<h2>array_search() <span class="badge">4.0.5+</span></h2>
+		<div><?php
+			$array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red');
+			var_dump(array_search('green', $array)); // 2
+			var_dump(array_search('yellow', $array)); // false
+		?></div>
+		
+		
+		
+		<h2>array_shift(&amp;...) <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>array_slide() <span class="badge">4+</span></h2>
+		<div><?php
+			$input = array("a", "b", "c", "d", "e");
+			var_dump(array_slice($input, 2));      // returns "c", "d", and "e"
+			var_dump(array_slice($input, -2, 1));  // returns "d"
+			var_dump(array_slice($input, 0, 3));   // returns "a", "b", and "c"
+
+			var_dump(array_slice($input, 2, -1));  //  returns "c", "d"
+			var_dump(array_slice($input, 2, -1, true));
+		?></div>
+		
+		
+		
+		<h2>array_splice(&amp;...) <span class="badge">4+</span></h2>
+		<div><?php
+			$input = array("red", "green", "blue", "yellow");
+			array_splice($input, 2);
+			var_dump($input);
+			// $input is now array("red", "green")
+
+			$input = array("red", "green", "blue", "yellow");
+			array_splice($input, 1, -1);
+			var_dump($input);
+			// $input is now array("red", "yellow")
+
+			$input = array("red", "green", "blue", "yellow");
+			array_splice($input, 1, count($input), "orange");
+			var_dump($input);
+			// $input is now array("red", "orange")
+
+			$input = array("red", "green", "blue", "yellow");
+			array_splice($input, -1, 2, array("black", "maroon"));
+			var_dump($input);
+			// $input is now array("red", "green", "blue", "black", "maroon")
+
+			$input = array("red", "green", "blue", "yellow");
+			array_splice($input, 3, 0, "purple");
+			var_dump($input);
+		?></div>
+		
+		
+		
+		<h2>array_sum() <span class="badge">4.0.4+</span></h2>
+		<div><?php
+			$a = array(2, 4, 6, 8);
+			var_dump(array_sum($a));
+		?></div>
+		
+		
+		
+		<h2>array_udiff_assoc() <span class="badge">5+</span></h2>
+		<div><?php
+			// http://php.net/manual/en/function.array-udiff-assoc.php
 		?></div>
 	</div>
 
