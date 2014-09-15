@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<h1>
-			<a href="http://fr2.php.net/manual/en/language.control-structures.php" target="_blank">Control Structures</a>
+			<a href="http://php.net/manual/en/language.control-structures.php" target="_blank">Control Structures</a>
 			<span class="badge">Version</span>
 		</h1>
 		
