@@ -14,7 +14,7 @@
 	<div class="container">
 		<h1>
 			<a href="http://php.net/manual/en/ref.array.php" target="_blank">Array Functions</a>
-			 <span class="badge">Version</span>
+			<span class="badge">Version</span>
 		</h1>
 		
 		
@@ -425,22 +425,22 @@
 			array_splice($input, 2);
 			var_dump($input);
 			// $input is now array("red", "green")
-
+			
 			$input = array("red", "green", "blue", "yellow");
 			array_splice($input, 1, -1);
 			var_dump($input);
 			// $input is now array("red", "yellow")
-
+			
 			$input = array("red", "green", "blue", "yellow");
 			array_splice($input, 1, count($input), "orange");
 			var_dump($input);
 			// $input is now array("red", "orange")
-
+			
 			$input = array("red", "green", "blue", "yellow");
 			array_splice($input, -1, 2, array("black", "maroon"));
 			var_dump($input);
 			// $input is now array("red", "green", "blue", "black", "maroon")
-
+			
 			$input = array("red", "green", "blue", "yellow");
 			array_splice($input, 3, 0, "purple");
 			var_dump($input);

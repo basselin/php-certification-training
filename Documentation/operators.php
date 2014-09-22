@@ -14,7 +14,7 @@
 	<div class="container">
 		<h1>
 			<a href="http://php.net/manual/en/language.operators.php" target="_blank">Operators</a>
-			 <span class="badge">Version</span>
+			<span class="badge">Version</span>
 		</h1>
 		
 		

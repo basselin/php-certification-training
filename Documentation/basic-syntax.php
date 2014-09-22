@@ -14,7 +14,7 @@
 	<div class="container">
 		<h1>
 			<a href="http://php.net/manual/en/language.basic-syntax.php" target="_blank">Basic syntax</a>
-			 <span class="badge">Version</span>
+			<span class="badge">Version</span>
 		</h1>
 		
 		
