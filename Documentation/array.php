@@ -326,6 +326,7 @@
 		<div><?php
 			$stack = array("orange", "banana", "apple", "raspberry");
 			var_dump(array_pop($stack), $stack);
+			var_dump(array_shift($stack), $stack);
 		?></div>
 		
 		
@@ -345,6 +346,7 @@
 			// Has the same effect as:  $array[] = $var;
 			$stack = array("orange", "banana");
 			var_dump(array_push($stack, "apple", "raspberry"), $stack);
+//			var_dump(array_unshift($stack, "hello"), $stack);
 		?></div>
 		
 		
@@ -458,8 +460,335 @@
 		
 		<h2>array_udiff_assoc() <span class="badge">5+</span></h2>
 		<div><?php
-			// http://php.net/manual/en/function.array-udiff-assoc.php
+			class cr {
+				private $priv_member;
+				function cr($val) {
+					$this->priv_member = $val;
+				}
+				static function comp_func_cr($a, $b) {
+					if ($a->priv_member === $b->priv_member) return 0;
+					return ($a->priv_member > $b->priv_member)? 1:-1;
+				}
+			}
+			$a = array("0.1" => new cr(9), "0.5" => new cr(12), 0 => new cr(23), 1=> new cr(4), 2 => new cr(-15),);
+			$b = array("0.2" => new cr(9), "0.5" => new cr(22), 0 => new cr(3), 1=> new cr(4), 2 => new cr(-15),);
+			$result = array_udiff_assoc($a, $b, array("cr", "comp_func_cr"));
+			var_dump($result);
 		?></div>
+		
+		
+		
+		<h2>array_udiff_uassoc() <span class="badge">5+</span></h2>
+		
+		
+		
+		<h2>array_udiff() <span class="badge">5+</span></h2>
+		
+		
+		
+		<h2>array_uintersect_assoc() <span class="badge">5+</span></h2>
+		
+		
+		
+		<h2>array_uintersect_uassoc() <span class="badge">5+</span></h2>
+		
+		
+		
+		<h2>array_uintersect() <span class="badge">5+</span></h2>
+		
+		
+		
+		<h2>array_unique() <span class="badge">4.0.1+</span></h2>
+		<div><?php
+			$input = [
+				'a' => 'red',
+				'1' => 'green',
+				'b' => 'blue',
+				'2' => 'red',
+				'blue' => 'blue',
+			];
+			var_dump(array_unique($input));
+			$input = [4, '4', '3', 4, 3];
+			var_dump(array_unique($input)); // SORT_STRING
+			var_dump(array_unique($input, SORT_REGULAR));
+			var_dump(array_unique($input, SORT_NUMERIC));
+		?></div>
+		
+		
+		
+		<h2>array_unshift() <span class="badge">4+</span></h2>
+		<div><?php
+			$queue = ['orange', 'banana'];
+			var_dump(array_unshift($queue, 'apple', 'raspberry'), $queue);
+//			var_dump(array_push($queue, 'push'), $queue);
+		?></div>
+		
+		
+		
+		<h2>array_values() <span class="badge">4+</span></h2>
+		<div><?php
+			$array = ['size' => 'xl', 'color' => 'gold'];
+			var_dump(array_values($array));
+		?></div>
+		
+		
+		
+		<h2>array_walk_recursive() <span class="badge">5+</span></h2>
+		<div><?php
+			$sweet = ['a' => 'apple', 'b' => 'banana'];
+			$fruits = ['sweet' => $sweet, 'sour' => 'lemon'];
+			function test_print($item, $key, $k3) {
+				echo "Cl&eacute;: $key = $item ($k3)<br/>";
+			}
+			array_walk_recursive($fruits, 'test_print', date('d'));
+		?></div>
+		
+		
+		
+		<h2>array_walk() <span class="badge">4+</span></h2>
+		<div><?php
+			$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+			function test_alter(&$item1, $key, $prefix) {
+				$item1 = "$prefix: $item1";
+			}
+			
+			function test_print2($item2, $key) {
+				echo "$key. $item2<br />\n";
+			}
+			
+			echo "Avant ...:\n";
+			array_walk($fruits, 'test_print2');
+			
+			array_walk($fruits, 'test_alter', 'fruit');
+			echo "... et apr&egrave;s :\n";
+			
+			array_walk($fruits, 'test_print2');
+		?></div>
+		
+		
+		
+		<h2>array() <span class="badge">4+</span> [] <span class="badge">5.4+</span></h2>
+		
+		
+		
+		<h2>arsort() <span class="badge">4+</span></h2>
+		<div><?php
+			$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+			var_dump(arsort($fruits), $fruits);
+		?></div>
+		
+		
+		
+		<h2>asort() <span class="badge">4+</span></h2>
+		<div><?php
+			$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+			var_dump(asort($fruits), $fruits);
+		?></div>
+		
+		
+		
+		<h2>compact() <span class="badge">4+</span></h2>
+		<div><?php
+			$city  = "San Francisco";
+			$state = "CA";
+			$event = "SIGGRAPH";
+			
+			$location_vars = array("city", "state");
+			
+			var_dump(compact("event", "nothing_here", $location_vars));
+			var_dump(compact("event", "nothing_here", 'city'));
+		?></div>
+		
+		
+		
+		<h2>count() <span class="badge">4+</span> &amp; Countable <span class="badge">5.1+</span></h2>
+		<div><?php
+			$food = ['fruits' => ['orange', 'banana'],
+					'viggie',
+					];
+			var_dump(count($food), count($food, COUNT_RECURSIVE));
+		?></div>
+		
+		
+		
+		<h2>current() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>each() <span class="badge">4+</span></h2>
+		<div><?php
+			$fruit = array('a' => 'apple', 'b' => 'banana', 'c' => 'cranberry');
+			reset($fruit);
+//			end($fruit);
+			while (list($key, $val) = each($fruit)) {
+				echo "$key => $val<br/>";
+			}
+		?></div>
+		
+		
+		
+		<h2>end() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>extract() <span class="badge">4+</span></h2>
+		<div><?php
+			$size = "large";
+			$var_array = array(
+				"color" => "blue",
+				"size"  => "medium",
+				"shape" => "sphere");
+			extract($var_array, EXTR_PREFIX_SAME, "wddx");
+			echo "$color, $size, $shape, $wddx_size\n";
+			
+			//	EXTR_OVERWRITE*
+			//	EXTR_SKIP
+			//	EXTR_PREFIX_SAME
+			//	EXTR_PREFIX_ALL
+			//	EXTR_PREFIX_INVALID
+			//	EXTR_IF_EXISTS
+			//	EXTR_PREFIX_IF_EXISTS
+			//	EXTR_REFS
+		?></div>
+		
+		
+		
+		<h2>in_array() <span class="badge">4+</span></h2>
+		<div><?php
+			$os = ['mac', 'nt', 'linux'];
+			var_dump($os);
+			var_dump(in_array('mac', $os), in_array('Mac', $os));
+			var_dump(in_array('win', $os));
+			$v = ['1.10', 12.4, 1.13];
+			var_dump(
+				$v,
+				in_array('12.4', $v),
+				in_array('12.4', $v, true)
+			);
+		?></div>
+		
+		
+		
+		<h2>key_exists() <span class="badge">4.0.6+</span> &raquo; array_key_exists()</h2>
+		
+		
+		
+		<h2>key() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>krsort() <span class="badge">4+</span></h2>
+		<div><?php
+			$fruits = array("d"=>"lemon", "a"=>"orange", "b"=>"banana", "c"=>"apple");
+			var_dump(krsort($fruits), $fruits);
+		?></div>
+		
+		
+		
+		<h2>ksort() <span class="badge">4+</span></h2>
+		<div><?php
+			$fruits = array("d"=>"lemon", "a"=>"orange", "b"=>"banana", "c"=>"apple");
+			var_dump(ksort($fruits), $fruits);
+		?></div>
+		
+		
+		
+		<h2>list() <span class="badge">4+</span></h2>
+		<div><?php
+			$info = array('coffee', 'brown', 'caffeine');
+			list($drink, , $power) = $info;
+			var_dump("$drink has $power.");
+		?></div>
+		
+		
+		
+		<h2>natcasesort() <span class="badge">4+</span></h2>
+		<div><?php
+			$array1 = array('IMG0.png', 'img12.png', 'img10.png', 'img2.png', 'img1.png', 'IMG3.png');
+			var_dump(natcasesort($array1), $array1);
+		?></div>
+		
+		
+		
+		<h2>natsort() <span class="badge">4+</span></h2>
+		<div><?php
+			$negative = array('-5','3','-2','0','-1000','09','1');
+			var_dump($negative, natsort($negative), $negative);
+		?></div>
+		
+		
+		
+		<h2>next() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>pos() <span class="badge">4+</span> &raquo; current()</h2>
+		
+		
+		
+		<h2>prev() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>range() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				range(0, 101, 10),
+				range('i', 'a'),
+				range('i', 'a', 2)
+			);
+		?></div>
+		
+		
+		
+		<h2>reset() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>rsort() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>shuffle() <span class="badge">4+</span></h2>
+		<div><?php
+			$numbers = range(10, 20);
+			var_dump(shuffle($numbers), $numbers);
+		?></div>
+		
+		
+		
+		<h2>sizeof() <span class="badge">4+</span> &raquo; count()</h2>
+		
+		
+		
+		<h2>sort() <span class="badge">4+</span></h2>
+		<div><?php
+			$fruits = array("lemon", "orange", "banana", "apple");
+			var_dump(sort($fruits), $fruits);
+		?></div>
+		<pre>
+SORT_REGULAR
+SORT_NUMERIC
+SORT_STRING
+SORT_LOCALE_STRING <span class="badge">5.0.2+</span>
+<strong class="text-danger">SORT_NATURAL</strong> <span class="badge">5.4+</span>
+<strong class="text-danger">SORT_FLAG_CASE</strong> <span class="badge">5.4+</span>
+</pre>
+		
+		
+		
+		<h2>uasort() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>uksort() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>usort() <span class="badge">4+</span></h2>
+		
+		
+		
 	</div>
 
 <body>
