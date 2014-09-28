@@ -151,9 +151,173 @@
 		
 		<h2>explode() <span class="badge">4+</span></h2>
 		<div><?php
-			// http://php.net/manual/en/function.explode.php
+			$str = 'one|two|three|four';
+			var_dump(
+				explode('|', $str),
+				explode('|', $str, 2),
+				explode('|', $str, -1) // 5.1+
+			);
 		?></div>
 		
+		
+		
+		<h2>fprintf() <span class="badge">5+</span></h2>
+		<div><?php
+			if ($fp = fopen('date.txt', 'w')) {
+				var_dump(fprintf($fp, '%04d-%02d-%02d', 2014, 9, 28));
+				unlink('date.txt');
+			}
+		?></div>
+		
+		
+		
+		<h2>get_html_translation_table() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				get_html_translation_table(HTML_SPECIALCHARS, ENT_COMPAT | ENT_HTML401),
+				get_html_translation_table(HTML_SPECIALCHARS, ENT_COMPAT | ENT_HTML5),
+				get_html_translation_table(HTML_ENTITIES, ENT_COMPAT | ENT_HTML5)
+			);
+		?></div>
+		
+		
+		
+		<h2>hebrev() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>hebrevc() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2 class="text-danger">hex2bin() <span class="badge">5.4+</span></h2>
+		<div><?php
+			var_dump(hex2bin('4578616d706c6520686578'));
+		?></div>
+		
+		
+		
+		<h2>html_entity_decode() <span class="badge">4.3+</span></h2>
+		<div><?php
+			/*
+			ENT_COMPAT
+			ENT_QUOTES
+			ENT_NOQUOTES
+			ENT_HTML401
+			ENT_XML1
+			ENT_XHTML
+			ENT_HTML5
+			*/
+		?></div>
+		
+		
+		
+		<h2>htmlentities() <span class="badge">4+</span></h2>
+		<div><?php
+			/*
+			ENT_COMPAT
+			ENT_QUOTES
+			ENT_NOQUOTES
+			ENT_IGNORE
+			ENT_SUBSTITUTE
+			ENT_DISALLOWED
+			ENT_HTML401
+			ENT_XML1
+			ENT_XHTML
+			ENT_HTML5
+			*/
+			
+			$str = 'Un \'apostrophe\' en <strong>gras</strong>';
+			var_dump(
+				htmlentities($str),
+				htmlentities($str, ENT_QUOTES)
+			);
+			$str = "\x8F!!!";
+			var_dump(
+				$str,
+				htmlentities($str, ENT_QUOTES, "UTF-8"),
+				htmlentities($str, ENT_QUOTES | ENT_IGNORE, "UTF-8")
+			);
+		?></div>
+		
+		
+		
+		<h2>htmlspecialchars_decode() <span class="badge">5.1+</span></h2>
+		<div><?php
+			/*
+			ENT_COMPAT
+			ENT_QUOTES
+			ENT_NOQUOTES
+			ENT_HTML401
+			ENT_XML1
+			ENT_XHTML
+			ENT_HTML5
+			*/
+		?></div>
+		
+		
+		
+		<h2>htmlspecialchars() <span class="badge">4+</span></h2>
+		<div><?php
+			/*
+			ENT_COMPAT
+			ENT_QUOTES
+			ENT_NOQUOTES
+			ENT_IGNORE
+			ENT_SUBSTITUTE
+			ENT_DISALLOWED
+			ENT_HTML401
+			ENT_XML1
+			ENT_XHTML
+			ENT_HTML5
+			*/
+		?></div>
+		
+		
+		
+		<h2>implode() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				implode(',', ['lastname', 'email', 'phone',]),
+				implode('hello', [])
+			);
+		?></div>
+		
+		
+		
+		<h2>join() <span class="badge">4+</span> &raquo; implode()</h2>
+		
+		
+		
+		<h2 class="text-danger">lcfirst() <span class="badge">5.3+</span></h2>
+		<div><?php
+			var_dump(
+				lcfirst('HelloWorld'),
+				lcfirst('HELLO WORLD')
+			);
+		?></div>
+		
+		
+		
+		<h2>levenshtein() <span class="badge">4.0.1+</span></h2>
+		
+		
+		
+		<h2>localeconv() <span class="badge">4.0.5+</span></h2>
+		<div><?php
+			var_dump(
+				setlocale(LC_ALL, 'fr_FR'),
+				localeconv(),
+				strftime("%A %d %B %Y")
+			);
+		?></div>
+		
+		
+		
+		<h2>ltrim() <span class="badge">4+</span></h2>
+		<div><?php
+			// http://php.net/manual/fr/function.ltrim.php
+		?></div>
 		
 		
 		<!--

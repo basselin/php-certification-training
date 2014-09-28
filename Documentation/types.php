@@ -26,7 +26,7 @@
 Hello $world!
 END;
 			var_dump($heredoc);
-			var_dump(<<<END
+			var_dump(<<< END
 Hello {$world}!
 END
 ); // Important!!!
@@ -41,7 +41,7 @@ END
 Hello $world!
 END;
 			var_dump($heredoc);
-			var_dump(<<<'END'
+			var_dump(<<< 'END'
 Hello {$world}!
 END
 ); // Important!!!
