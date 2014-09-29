@@ -316,12 +316,212 @@
 		
 		<h2>ltrim() <span class="badge">4+</span></h2>
 		<div><?php
-			// http://php.net/manual/fr/function.ltrim.php
+			var_dump(
+				ltrim('Hello World', 'Hdle')
+			);
 		?></div>
 		
 		
+		
+		<h2>md5_file() <span class="badge">4.2+</span></h2>
+		<div><?php
+			var_dump(
+				md5_file(__FILE__),
+				md5_file(__FILE__, true)
+			);
+		?></div>
+		
+		
+		
+		<h2>md5() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				md5('apple'),
+				md5('apple', true)
+			);
+		?></div>
+		
+		
+		
+		<h2>metaphone() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				metaphone('programming'),
+				metaphone('programmer'),
+				metaphone('programming', 5),
+				metaphone('programmer', 5)
+			);
+		?></div>
+		
+		
+		
+		<h2>money_format() <span class="badge">4.3+</span></h2>
+		<div><?php
+			var_dump(
+				setlocale(LC_ALL, 'fr_FR'),
+//				setlocale(LC_ALL, 'en_US'),
+				money_format('%i', 1234.567),
+				money_format('%(#10n', 1234.567)
+			);
+		?></div>
+		
+		
+		
+		<h2>nl_langinfo() <span class="badge">4.1+</span></h2>
+		
+		
+		
+		<h2>nl2br() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				nl2br("Ceci\r\nest\n\rune\nchaine\r"),
+				nl2br("Ceci\r\nest\n\rune\nchaine\r", false)
+			);
+		?></div>
+		
+		
+		
+		<h2>number_format() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(number_format(132456.789, 2, ',', ' '));
+		?></div>
+		
+		
+		
+		<h2>ord() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(ord("\n"));
+		?></div>
+		
+		
+		
+		<h2>parse_str() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				parse_str('first=value&arr[]=foo+bar&arr[]=baz', $output),
+				$output
+			);
+		?></div>
+		
+		
+		
+		<h2>print() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>printf() <span class="badge">4+</span></h2>
+		<div><code>@see sprintf()</code></div>
+		
+		
+		
+		<h2>quoted_printable_decode() <span class="badge">4+</span> &raquo; imap_qprint()</h2>
+		
+		
+		
+		<h2 class="text-danger">quoted_printable_encode() <span class="badge">5.3+</span> &raquo; image_8bit()</h2>
+		<div><?php
+			var_dump(quoted_printable_encode('Hello World!'));
+		?></div>
+		
+		
+		
+		<h2>quotemeta() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(quotemeta("Hello world. (can you hear me?)"));
+		?></div>
+		
+		
+		
+		<h2>rtrim() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>setlocale() <span class="badge">4+</span></h2>
+		<div><?php
+			// LC_ALL
+			// LC_COLLATE
+			// LC_CTYPE
+			// LC_MONETARY
+			// LC_NUMERIC
+			// LC_TIME
+			// LC_MESSAGES
+		?></div>
+		
+		
+		
+		<h2>sha1_file() <span class="badge">4.3+</span></h2>
+		<div><?php
+			var_dump(
+				sha1_file(__FILE__),
+				sha1_file(__FILE__, true)
+			);
+		?></div>
+		
+		
+		
+		<h2>sha1() <span class="badge">4.3+</span></h2>
+		<div><?php
+			var_dump(
+				sha1('apple'),
+				sha1('apple', true)
+			);
+		?></div>
+		
+		
+		
+		<h2>similar_text() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				similar_text('first', 'second', $percent),
+				$percent
+			);
+		?></div>
+		
+		
+		
+		<h2>soundex() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				soundex('Euler'),	soundex('Ellery'),
+				soundex('Gauss'),	soundex('Ghosh')
+			);
+		?></div>
+		
+		
+		
+		<h2>sprintf() <span class="badge">4+</span></h2>
+		<div><?php
+			$format = 'The %2$s contains %1$04d monkeys';
+			var_dump(
+				sprintf($format, 5, 'tree')
+			);
+		?></div>
+		
+		
+		
+		<h2>sscanf() <span class="badge">4.0.1+</span></h2>
+		<div><?php
+			$auth = "24\tLewis Carroll";
+			var_dump(
+				sscanf($auth, "%d\t%s %s", $id, $first, $last),
+				"<author id='$id'>
+	<firstname>$first</firstname>
+	<surname>$last</surname>
+</author>"
+			);
+		?></div>
+		
+		
+		
+		<h2 class="text-danger">str_getcsv() <span class="badge">5.3+</span></h2>
+		<div><?php
+			// http://php.net/manual/fr/function.str-getcsv.php
+		?></div>
+		
+		
+		
 		<!--
-		<h2>() <span class="badge">+</span></h2>
+		<h2>() <span class="badge">4+</span></h2>
 		<div><?php
 			
 		?></div>
