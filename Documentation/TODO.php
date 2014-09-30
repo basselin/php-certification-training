@@ -6,4 +6,5 @@
 // http://php.net/manual/en/book.stream.php
 // http://php.net/manual/en/ref.errorfunc.php
 // http://php.net/manual/en/book.simplexml.php
+// http://php.net/manual/en/ref.session.php
 
