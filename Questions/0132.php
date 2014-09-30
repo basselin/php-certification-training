@@ -2,7 +2,7 @@
 
 /*
 
-//  When working with SimpleXML in PHP 5, the four basic rules on how the XML document is accessed are which of the following?
+// When working with SimpleXML in PHP 5, the four basic rules on how the XML document is accessed are which of the following?
 
 1) Element namespaces are denoted by the 'namespace' attribute          
 2) converting an element to a string denotes text data                  OK

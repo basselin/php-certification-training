@@ -14,7 +14,7 @@ $head->appendChild($title);
 
 1) $dom->createTextNode("Hello, World");
 2) $dom->appendElement($title, "text", "Hello, world!");
-3) $dom->appendTextNode($title, "Hello, World!");
+3) $dom->appendTextNode($title, "Hello, World!");						// http://php.net/manual/en/domdocument.createtextnode.php
 4) $dom->createElement('text', "Hello, World");
 5) None of the above 
 
