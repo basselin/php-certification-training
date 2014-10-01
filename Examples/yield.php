@@ -1,7 +1,7 @@
 <pre><?php
 /**
  * yield $var;
- * foreach ([] as list($a, $b)) { .. }
+ * foreach ($datas[] as list($a, $b)) { .. }
  *
  * @version PHP5.5+
  */
