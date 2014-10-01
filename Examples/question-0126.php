@@ -25,10 +25,10 @@ xml_set_element_handler($xml, "xml_start_handler", "xml_end_handler");
 xml_parse($xml, $xmldata);
 
 function xml_start_handler($xml, $tag, $attributes) {
-	print "Tag: $tag<br />\n";
+    print "Tag: $tag<br />\n";
 }
 
 function xml_end_handler($xml, $tag) {
-	print "Tag: /$tag<br />\n";
+    print "Tag: /$tag<br />\n";
 }
 

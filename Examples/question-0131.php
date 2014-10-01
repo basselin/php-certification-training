@@ -26,8 +26,8 @@ $title->setAttributeNode(new DOMAttr('data-charset', 'utf-8'));
 // Render
 $dom->appendChild($head);
 var_dump(
-	$dom->saveXML(),
-	$dom->saveXML($title),
-	$dom->saveHtml()
+    $dom->saveXML(),
+    $dom->saveXML($title),
+    $dom->saveHtml()
 );
 
