@@ -9,11 +9,11 @@
 function fileLineGenerator($file)
 {
     if (!$fh = fopen($file, 'r')) { return; }
-    $l = 1;
+    $ln = 1;
     while (false !== ($line = fgets($fh))) {
         echo '&gt;';
-        yield [$l, $line]; // 5.5+ ( Short array syntax 5.4+ )
-        ++$l;
+        yield [$ln, $line]; // 5.5+ ( Short array syntax 5.4+ )
+        ++$ln;
     }
     fclose($fh);
 }
