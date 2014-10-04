@@ -34,6 +34,7 @@ $bCl2 = Closure::bind($cl2, new A(), 'A');
 
 var_dump(
     $cl1,
+    $cl1 instanceof Closure,
     $bCl1(),
     $bCl2()
 );
