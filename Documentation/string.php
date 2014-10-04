@@ -515,7 +515,463 @@
 		
 		<h2 class="text-danger">str_getcsv() <span class="badge">5.3+</span></h2>
 		<div><?php
-			// http://php.net/manual/fr/function.str-getcsv.php
+			/*
+			var_dump(
+				array_map('str_getcsv', file('data.csv'))
+			);
+			 */
+		?></div>
+		
+		
+		
+		<h2>str_ireplace() <span class="badge">5+</span></h2>
+		<div><?php
+			$str = 'text="%BODY%"';
+			var_dump(
+				$str,
+				str_ireplace('%body%', 'black', $str)
+			);
+		?></div>
+		
+		
+		
+		<h2>str_pad() <span class="badge">4.0.1+</span></h2>
+		<div><?php
+			$input = 'Alien';
+			var_dump(
+				str_pad($input, 10), // STR_PAD_RIGHT
+				str_pad($input, 10, '_', STR_PAD_LEFT),
+				str_pad($input, 10, '-=', STR_PAD_BOTH)
+			);
+		?></div>
+		
+		
+		
+		<h2>str_repeat() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				str_repeat('-=-', 3)
+			);
+		?></div>
+		
+		
+		
+		<h2>str_replace() <span class="badge">4+</span></h2>
+		<div><?php
+			$str     = "Line 1\nLine 2\rLine 3\r\nLine 4\n";
+			$order   = array("\r\n", "\n", "\r");
+//			$order   = array("\n", "\r", "\r\n"); // WARNING
+			$replace = '<br />';
+			
+			var_dump(
+				str_replace($order, $replace, $str),
+				str_replace($order, ' ', $str)
+			);
+		?></div>
+		
+		
+		
+		<h2>str_rot13() <span class="badge">4.2+</span></h2>
+		<div><?php
+			var_dump(
+				str_rot13(utf8_decode('Hello PHP 4.2 ! c\'est l\'étè...'))
+			);
+		?></div>
+		
+		
+		
+		<h2>str_shuffle() <span class="badge">4.3+</span></h2>
+		<div><?php
+			$str = 'abcdef';
+			var_dump(
+				str_shuffle($str), str_shuffle($str)
+			);
+		?></div>
+		
+		
+		
+		<h2>str_split() <span class="badge">5+</span></h2>
+		<div><?php
+			$str = 'Hello Friend';
+			var_dump(
+				str_split($str),
+				str_split($str, 5)
+			);
+		?></div>
+		
+		
+		
+		<h2>str_word_count() <span class="badge">4.3+</span></h2>
+		<div><?php
+			$str = utf8_decode('Hey! voici une bien belle histoire racontée par B3noit.');
+			var_dump(
+				str_word_count($str), // 10
+				str_word_count($str, 1), // 10
+				str_word_count($str, 2, '!3') // 9
+			);
+		?></div>
+		
+		
+		
+		<h2>strcasecmp() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				strcasecmp('Hello', 'hello'),
+				strcasecmp('Pedro', 'hello')
+			);
+		?></div>
+		
+		
+		
+		<h2>strchr() <span class="badge">4+</span> &raquo; strstr()</h2>
+		
+		
+		
+		<h2>strcmp() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				strcmp('Bonjour', 'Bonjour'),
+				strcmp('Bonjour', 'bonjour')
+			);
+		?></div>
+		
+		
+		
+		<h2>strcoll() <span class="badge">4.0.5+</span> <em>Locale strcmp()</em></h2>
+		
+		
+		
+		<h2>strcspn() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				strcspn('abcd', 'apple'),
+				strcspn('abcd', 'banana'),
+				strcspn('hello', 'l', 1),
+				strcspn('hello', 'world'),
+				strcspn('world', 'hello')
+			);
+		?></div>
+		
+		
+		
+		<h2>strip_tags() <span class="badge">4+</span></h2>
+		<div><?php
+			$html  = "<p>Hello <b class=\"bold\">World<i>!</b></p>\n";
+			$html .= "<p><u<u>>Security</u<u>></p>"; // No problem!
+			var_dump(
+				strip_tags($html),
+				strip_tags($html, '<b><i>'),
+				strip_tags($html, '<B>')
+			);
+		?></div>
+		
+		
+		
+		<h2>stripcslashes() <span class="badge">4+</span> <em>addcslashes()</em></h2>
+		
+		
+		
+		<h2>stripos() <span class="badge">5+</span></h2>
+		<div><?php
+			$find = 'ab';
+			$str1 = 'wxyz';
+			$str2 = 'ABCD';
+			var_dump(
+				stripos($str1, $find),
+				stripos($str2, $find),
+				stripos($str2, 'a', 2),
+				stripos($str2, 'c', 2)
+			);
+		?></div>
+		
+		
+		
+		<h2>stripslashes() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				stripslashes("C\'est magnifique!")
+			);
+		?></div>
+		
+		
+		<h2 class="text-danger">stristr() <span class="badge">4+</span></h2>
+		<div><?php
+			$email = 'USER@DOMAIN.com';
+			var_dump(
+				$email,
+				stristr($email, 'e'),
+				stristr($email, 'e', true) // PHP 5.3+
+			);
+		?></div>
+		
+		
+		<h2>strlen() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				strlen('count'), // 5
+				count('count'), // 1
+				count(str_split('count')) // 5
+			);
+		?></div>
+		
+		
+		
+		<h2>strnatcasecmp() <span class="badge">4+</span> <em>strcasecmp()</em></h2>
+		
+		
+		
+		<h2>strcasecmp() <span class="badge">4+</span> <em>strcmp()</em></h2>
+		
+		
+		
+		<h2>strcasecmp() <span class="badge">4+</span> <em>strcmp()</em></h2>
+		
+		
+		
+		<h2>strncasecmp() <span class="badge">4+</span> <em>strncmp()</em></h2>
+		
+		
+		
+		<h2>strncmp() <span class="badge">4+</span></h2>
+		
+		
+		
+		<h2>strpbrk() <span class="badge">5+</span></h2>
+		<div><?php
+			$str = 'This is a Simple text.';
+			var_dump(
+				$str,
+				strpbrk($str, 'mi'),
+				strpbrk($str, 'S')
+			);
+		?></div>
+		
+		
+		
+		<h2>strpos() <span class="badge">4+</span></h2>
+		<div><?php
+			$find = 'ab';
+			$str1 = 'wxyz';
+			$str2 = 'abcd';
+			var_dump(
+				strpos($str1, $find),
+				strpos($str2, $find),
+				strpos($str2, 'a', 2),
+				strpos($str2, 'c', 2)
+			);
+		?></div>
+		
+		
+		
+		<h2>strrchr() <span class="badge">4+</span></h2>
+		<div><?php
+			$path = 'c:/windows/';
+			var_dump(
+				$path,
+				strrchr($path, ':'),
+				substr(strrchr($path, ':'), 1)
+			);
+		?></div>
+		
+		
+		
+		<h2>strrev() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = 'Zend Certification';
+			var_dump(
+				$str,
+				strrev($str)
+			);
+		?></div>
+		
+		
+		
+		<h2>strripos() <span class="badge">5+</span> <em>strrpos()</em></h2>
+		
+		
+		
+		<h2>strrpos() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = 'abcABCabc';
+			var_dump(
+				strrpos($str, 'b'),
+				strrpos($str, 'b', 5),
+				strrpos($str, 'b', -5)
+			);
+		?></div>
+		
+		
+		
+		<h2>strspn() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = '1256 abcdef';
+			var_dump(
+				$str,
+				strspn($str, '123456789'),
+				strspn($str, 'abcdefgh ')
+			);
+		?></div>
+		
+		
+		
+		<h2 class="text-danger">strstr() <span class="badge">4+</span></h2>
+		<div><?php
+			$email = 'user@domain.com';
+			var_dump(
+				$email,
+				strstr($email, '@'),
+				strstr($email, '@', true) // 5.3+
+			);
+		?></div>
+		
+		
+		
+		<h2>strtok() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = '/do/something';
+			var_dump(
+				strtok($str, '/'),
+				strtok('/'),
+				strtok('/')
+			);
+		?></div>
+		
+		
+		
+		<h2>strtolower() &amp; strtoupper() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = utf8_decode('Marie a Été Gentille!');
+			var_dump(
+				$str,
+				strtolower($str),
+				strtoupper($str)
+			);
+		?></div>
+		
+		
+		
+		<h2>strtr() <span class="badge">4+</span></h2>
+		<div><?php
+			var_dump(
+				strtr('baab', 'ab', '01'),
+				strtr('baab', ['ab' => '01'])
+			);
+		?></div>
+		
+		
+		
+		<h2>substr_compare() <span class="badge">5+</span></h2>
+		<div><?php
+			var_dump(
+				substr_compare("abcde", "bc", 1, 2), // 0
+				substr_compare("abcde", "de", -2, 2), // 0
+				substr_compare("abcde", "bcg", 1, 2), // 0
+				substr_compare("abcde", "BC", 1, 2, true), // 0
+				substr_compare("abcde", "bc", 1, 3), // 1
+				substr_compare("abcde", "cd", 1, 2) // -1
+			);
+		?></div>
+		
+		
+		
+		<h2>substr_count() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = 'Ceci est un test';
+			var_dump(
+				substr_count($str, 'est'), // 2
+				substr_count($str, 'est', 6), // 1
+				substr_count($str, 6, 4), // 0
+				substr_count($str, 8, 10) // 0
+			);
+		?></div>
+		
+		
+		
+		<h2>substr_replace() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = 'ABCDEFGH:/MNRPQR/';
+			var_dump(
+				substr_replace($str, 'bob', 0),
+				substr_replace($str, 'bob', 0, strlen($str)),
+				substr_replace($str, 'bob', 10, -1),
+				substr_replace($str, 'bob', -7, -1)
+			);
+		?></div>
+		
+		
+		
+		<h2>substr() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = 'abcdef';
+			var_dump(
+				substr($str, 1),
+				substr($str, 2),
+				substr($str, 3, 2),
+				substr($str, -1),
+				substr($str, -2),
+				substr($str, -3, 2)
+			);
+		?></div>
+		
+		
+		
+		<h2>trim() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = 'Hello world! ';
+			var_dump(
+				trim($str),
+				trim($str, 'hHle ')
+			);
+		?></div>
+		
+		
+		
+		<h2>ucfirst() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = 'Bonjour tout le monde';
+			var_dump(
+				ucfirst($str)
+			);
+		?></div>
+		
+		
+		
+		<h2>ucwords() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = 'Bonjour tout le monde';
+			var_dump(
+				ucwords($str)
+			);
+		?></div>
+		
+		
+		
+		<h2>vfprintf() <span class="badge">5+</span></h2>
+		
+		
+		
+		<h2>vprintf() <span class="badge">4.1+</span></h2>
+		<div><?php
+			vprintf("%04d-%02d-%02d", explode('-', '1988-8-1'));
+		?></div>
+		
+		
+		
+		<h2>vsprintf() <span class="badge">4.1+</span></h2>
+		<div><?php
+			var_dump(
+				vsprintf("%04d-%02d-%02d", explode('-', '1988-8-1'))
+			);
+		?></div>
+		
+		
+		
+		<h2>wordwrap() <span class="badge">4+</span></h2>
+		<div><?php
+			$str = "Portez ce vieux whisky au juge blond qui fume.";
+			var_dump(
+				wordwrap($str, 20, "<br />\n")
+			);
 		?></div>
 		
 		
@@ -523,7 +979,7 @@
 		<!--
 		<h2>() <span class="badge">4+</span></h2>
 		<div><?php
-			
+			var_dump();
 		?></div>
 		-->
 		
