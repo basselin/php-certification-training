@@ -42,7 +42,7 @@ $obj_one->printValue();
 
 /*
 
-FATAL ERROR: Cannont access private property
+FATAL ERROR: Cannot access private property
 
 */
 
