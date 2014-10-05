@@ -5,15 +5,14 @@
 $string = "111221";
 
 for($i = 0; $i < strlen($string); $i++) {
-	
-	$current = $string[$i];
-	$count = 1;
-	
-	while(isset($string[$i + $count]) && ($string[$i + $count] == $current)) $count++;
-	
-	$newstring .= "$count{$current}";
-	
-	$i += $count-1;
+    $current = $string[$i];
+    $count = 1;
+    
+    while(isset($string[$i + $count]) && ($string[$i + $count] == $current)) $count++;
+    
+    $newstring .= "$count{$current}";
+    
+    $i += $count-1;
 }
 
 print $newstring;

@@ -19,7 +19,6 @@
 		
 		
 		
-		
 		<h2>addcslahes() <span class="badge">4+</span></h2>
 		<div><?php
 			var_dump(
