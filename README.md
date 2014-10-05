@@ -16,6 +16,7 @@
 ### Training links
 
 * http://zend-php.appspot.com
+* http://www.zendexam.com
 * http://fr.slideshare.net/carlosbuenosvinos/zend-php-53-demo-certification-test
 * http://www.lornajane.net/posts/2014/zend-certified-php-developer-5-5
 

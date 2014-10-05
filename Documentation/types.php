@@ -93,6 +93,28 @@ END
 		
 		
 		
+		<h2>$a[key]</h2>
+		<div><?php
+			$a = [
+				'key1' => 'val1',
+				'key2' => ['sub' => 'val'],
+				];
+			var_dump(
+				$a['key1'],
+//				"$a['key1']", // PARSE ERROR
+				"{$a['key1']}",
+				"$a[key1]", // SLOW
+				"{$a[key1]}", // Notice: undefined constant key
+				//
+				$a['key2'],
+				"{$a['key2']['sub']}",
+				"$a[key2][sub]", // Notice: Array to string 	Display: Array[sub]
+				"{$a[key2][sub]}" // Notice: undefined constant key
+			);
+		?></div>
+		
+		
+		
 		<h2>Type Juggling (type)</h2>
 		<div><?php
 			$var = '10.9 OSX';

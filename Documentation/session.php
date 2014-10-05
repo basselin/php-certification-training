@@ -140,9 +140,6 @@ class SessionHandler implements SessionHandlerInterface {
 		
 		
 		
-		
-		
-		
 		<!--
 		<h2>() <span class="badge">4+</span></h2>
 		<div><?php
