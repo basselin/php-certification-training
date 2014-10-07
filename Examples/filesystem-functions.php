@@ -78,7 +78,7 @@
 		
 		
 		
-		<h2><code>bool</code> fclose(<code>resource $handle</code>) <span class="badge">4.1+</span></h2>
+		<h2><code>bool</code> fclose(<code>resource $handle</code>) <span class="badge">4+</span></h2>
 		
 		
 		
