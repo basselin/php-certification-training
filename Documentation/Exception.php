@@ -1,4 +1,7 @@
 <?php
+/**
+ * @link http://php.net/manual/en/language.exceptions.php
+ */
 
 class Exception
 {
