@@ -19,7 +19,7 @@
 		
 		
 		
-		<h3>array_change_key_case() <span class="badge">4.2+</span></h3>
+		<h3><code>array</code> array_change_key_case(<code>array $array [, int $case = CASE_LOWER]</code>) <span class="badge">4.2+</span></h3>
 		<div><?php
 			$arr = [
 				'ToTo' => 'ToTo',
@@ -31,7 +31,7 @@
 		
 		
 		
-		<h3>array_chunk() <span class="badge">4.2+</span></h3>
+		<h3><code>array</code> array_chunk(<code>array $array, int $size [, bool $preserve_keys = false]</code>) <span class="badge">4.2+</span></h3>
 		<div><?php
 			$arr = [
 				'a', 'b' => ['x', 'y', 'z'], 'c', 'd', 'e',
@@ -41,7 +41,7 @@
 		
 		
 		
-		<h3 class="text-danger">array_column() <span class="badge">5.5+</span></h3>
+		<h3 class="text-danger"><code>array</code> array_column(<code>array $array $clumn_key [, mixed $index_key = null]</code>) <span class="badge">5.5+</span></h3>
 		<div><?php
 			$arr = [
 				array(
@@ -72,7 +72,7 @@
 		
 		
 		
-		<h3>array_combine() <span class="badge">5+</span></h3>
+		<h3><code>array</code> array_combine(<code>array $keys, array $values</code>) <span class="badge">5+</span></h3>
 		<div><?php
 			$arr1 = ['green', 'red', 'yellow'];
 			$arr2 = ['avocado', 'apple', 'banana'];
@@ -81,7 +81,7 @@
 		
 		
 		
-		<h3>array_count_values() <span class="badge">4+</span></h3>
+		<h3><code>array</code> array_count_values(<code>array $array</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$arr = [
 				5,
@@ -100,7 +100,7 @@
 		
 		
 		
-		<h3>array_diff_assoc() <span class="badge">4.3+</span></h3>
+		<h3><code>array</code> array_diff_assoc(<code>array $array1, array $array2 [, array $...]</code>) <span class="badge">4.3+</span></h3>
 		<div><?php
 			$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
 			$array2 = array("a" => "green", "yellow", "red");
@@ -109,7 +109,7 @@
 		
 		
 		
-		<h3>array_diff_key() <span class="badge">5.1+</span></h3>
+		<h3><code>array</code> array_diff_key(<code>array $array1, array $array2 [, array $...]</code>) <span class="badge">5.1+</span></h3>
 		<div><?php
 			$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4, 18);
 			$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8, 9,8);
@@ -118,7 +118,7 @@
 		
 		
 		
-		<h3>array_diff_uassoc() <span class="badge">5+</span></h3>
+		<h3><code>array</code> array_diff_uassoc(<code>array $array1, $array2 [, array $...], callable $key_compare_func</code>) <span class="badge">5+</span></h3>
 		<div><?php
 			$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
 			$array2 = array("a" => "green", "yellow", "red");
@@ -131,7 +131,7 @@
 		
 		
 		
-		<h3>array_diff_ukey() <span class="badge">5.1+</span></h3>
+		<h3><code>array</code> array_diff_ukey(<code>array $array1, $array2 [, array $...], callable $key_compare_func</code>) <span class="badge">5.1+</span></h3>
 		<div><?php
 			$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4);
 			$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8);
@@ -144,7 +144,7 @@
 		
 		
 		
-		<h3>array_diff() <span class="badge">4.0.1+</span></h3>
+		<h3><code>array</code> array_diff(<code>array $array1, array $array2 [, array $...]</code>) <span class="badge">4.0.1+</span></h3>
 		<div><?php
 			$array1 = array("a" => "green", "red", "blue", "red");
 			$array2 = array("b" => "green", "yellow", "red");
@@ -153,16 +153,16 @@
 		
 		
 		
-		<h3>array_fill_keys() <span class="badge">5.2+</span></h3>
+		<h3><code>array</code> array_fill_keys(<code>array $keys, mixed $value</code>) <span class="badge">5.2+</span></h3>
 		<div><?php
 			$keys = array('foo', 5, 10, 'bar', 'x' => 'hello', []); // [] ==>> E_NOTICE
 			var_dump(array_fill_keys($keys, 'banana'));
-
+			var_dump(array_fill_keys($keys, []));
 		?></div>
 		
 		
 		
-		<h3>array_fill() <span class="badge">4.2+</span></h3>
+		<h3><code>array</code> array_fill(<code>int $start_index, int $num, mixed $value</code>) <span class="badge">4.2+</span></h3>
 		<div><?php
 			var_dump(array_fill(5, 6, 'banana'));
 			var_dump(array_fill(-2, 4, 'pear'));
@@ -171,7 +171,7 @@
 		
 		
 		
-		<h3>array_filter() <span class="badge">4.0.6+</span></h3>
+		<h3><code>array</code> array_filter(<code>array $array [, callable $callback [, int $flag = 0]]</code>) <span class="badge">4.0.6+</span></h3>
 		<div><?php
 			$array1 = array("a" => 1, "b" => 2, "c" => 3, "d" => 4, "e" => 5);
 			var_dump(array_filter($array1, function($var) {
@@ -182,7 +182,7 @@
 		
 		
 		
-		<h3>array_flip() <span class="badge">4+</span></h3>
+		<h3><code>array</code> array_flip(<code>array $array</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$arr = array("a" => 1, "b" => 1, "c" => 2, 'd' => []); // ignored ==>> E_WARNING
 			var_dump(array_flip($arr));
@@ -190,7 +190,7 @@
 		
 		
 		
-		<h3>array_intersect_assoc() <span class="badge">4.3+</span></h3>
+		<h3><code>array</code> array_intersect_assoc(<code>array $array1, array $array2 [, array $...]</code>) <span class="badge">4.3+</span></h3>
 		<div><?php
 			$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red"); // [0] = "red"
 			$array2 = array("a" => "green", "b" => "yellow", "blue", "red"); // red ne ressort pas car [1] = "red"
@@ -200,7 +200,7 @@
 		
 		
 		
-		<h3>array_intersect_key() <span class="badge">5.1+</span></h3>
+		<h3><code>array</code> array_intersect_key(<code>array $array1, array $array2 [, array $...]</code>) <span class="badge">5.1+</span></h3>
 		<div><?php
 			$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4, []);
 			$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8, []);
@@ -209,7 +209,7 @@
 		
 		
 		
-		<h3>array_intersect_uassoc() <span class="badge">5+</span></h3>
+		<h3><code>array</code> array_intersect_uassoc(<code>array $array1, array $array2 [, array $...], callable $key_compare_func</code>) <span class="badge">5+</span></h3>
 		<div><?php
 			$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red"); // [] ==>> E_NOTICE
 			$array2 = array("a" => "GREEN", "B" => "brown", "yellow", "red");
@@ -219,7 +219,7 @@
 		
 		
 		
-		<h3>array_intersect_ukey() <span class="badge">5.1+</span></h3>
+		<h3><code>array</code> array_intersect_ukey(<code>array $array1, array $array2 [, array $...], callable $key_compare_func</code>) <span class="badge">5.1+</span></h3>
 		<div><?php
 			$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4, []);
 			$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8, []);
@@ -231,7 +231,7 @@
 		
 		
 		
-		<h3>array_intersect() <span class="badge">4.0.1+</span></h3>
+		<h3><code>array</code> array_intersect(<code>array $array1, array $array2 [, array $...]</code>) <span class="badge">4.0.1+</span></h3>
 		<div><?php
 			$array1 = array("a" => "green", "red", "blue"); // [] ==>> E_NOTICE
 			$array2 = array("b" => "green", "yellow", "red");
@@ -240,7 +240,7 @@
 		
 		
 		
-		<h3>array_key_exists() <span class="badge">4.0.7</span></h3>
+		<h3><code>bool</code> array_key_exists(<code>mixed $key, array $array</code>) <span class="badge">4.0.7</span></h3>
 		<div><?php
 			$search_array = array('first' => null, 'second' => 4);
 			var_dump(array_key_exists('first', $search_array)); // true
@@ -250,7 +250,7 @@
 		
 		
 		
-		<h3>array_keys() <span class="badge">4+</span></h3>
+		<h3><code>array</code> array_keys(<code>array $array [, mixed $search_value [, bool $strict = false]]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$array = array("color" => array("blue", "red", "green"),
 			               "size"  => array("small", "medium", "large"));
@@ -262,7 +262,7 @@
 		
 		
 		
-		<h3>array_map() <span class="badge">4.0.6+</span></h3>
+		<h3><code>array</code> array_map(<code>callable $callback, array $array1 [, array $...]</code>) <span class="badge">4.0.6+</span></h3>
 		<div><?php
 			$a = array(1, 2, 4, 8, 16);
 			var_dump(array_map(function($n) {
@@ -272,7 +272,7 @@
 		
 		
 		
-		<h3>array_merge_recursive() <span class="badge">4.0.1+</span></h3>
+		<h3><code>array</code> array_merge_recursive(<code>array $array1 [, array $...]</code>) <span class="badge">4.0.1+</span></h3>
 		<div><?php
 			$ar1 = array("color" => array("favorite" => "red"), 5);
 			$ar2 = array(10, "color" => array("favorite" => "green", "blue"));
@@ -281,7 +281,7 @@
 		
 		
 		
-		<h3>array_merge() <span class="badge">4+</span></h3>
+		<h3><code>array</code> array_merge(<code>array $array1 [, array $...]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$ar1 = array("color" => array("favorite" => "red"), 5);
 			$ar2 = array(10, "color" => array("favorite" => "green", "blue"));
@@ -297,7 +297,7 @@
 		
 		
 		
-		<h3>array_multisort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> array_multisort(<code>array &amp;$array1 [, mixed $array1_sort_order = SORT_ASC [, mixed $array1_sort_flags = SORT_REGULAR [, mixed $...]]]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$ar1 = array(10, 100, 100, 0);
 			$ar2 = array(1, 3, 2, 4);
@@ -311,7 +311,7 @@
 		
 		
 		
-		<h3>array_pad() <span class="badge">4+</span></h3>
+		<h3><code>array</code> array_pad(<code>array $array, int $size, mixed $value</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$input = array(12, 10, 9);
 
@@ -322,7 +322,7 @@
 		
 		
 		
-		<h3>array_pop() <span class="badge">4+</span></h3>
+		<h3><code>mixed</code> array_pop(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$stack = array("orange", "banana", "apple", "raspberry");
 			var_dump(array_pop($stack), $stack);
@@ -331,7 +331,7 @@
 		
 		
 		
-		<h3>array_product() <span class="badge">5.1+</span></h3>
+		<h3><code>mixed</code> array_product(<code>array $array</code>) <span class="badge">5.1+</span></h3>
 		<div><?php
 			var_dump(array_product([2,4,6])); // 48
 			var_dump(array_product([])); // 1
@@ -341,7 +341,7 @@
 		
 		
 		
-		<h3>array_push() <span class="badge">4+</span></h3>
+		<h3><code>int</code> array_push(<code>array &amp;$array, mixed $value1 [, mixed $...]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			// Has the same effect as:  $array[] = $var;
 			$stack = array("orange", "banana");
@@ -351,7 +351,7 @@
 		
 		
 		
-		<h3>array_rand() <span class="badge">4+</span></h3>
+		<h3><code>mixed</code> array_rand(<code>array $array [, int $num = 1]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$input = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
 			$rand_keys = array_rand($input, 2);
@@ -365,7 +365,7 @@
 		
 		
 		
-		<h3>array_reduce() <span class="badge">4.0.5+</span></h3>
+		<h3><code>mixed</code> array_reduce(<code>array $array, callable $callback [, mixed $initial = null]</code>) <span class="badge">4.0.5+</span></h3>
 		<div><?php
 			$array = array(1, 2, 3, 4, 5);
 			var_dump(array_reduce($a, function($carry, $item) {
@@ -376,7 +376,7 @@
 		
 		
 		
-		<h3 class="text-danger">array_replace_recursive() &amp; array_replace() <span class="badge">5.3+</span></h3>
+		<h3 class="text-danger"><code>array</code> array_replace_recursive(<code>array $array1, array $array2 [, array $...]</code>) &amp; array_replace() <span class="badge">5.3+</span></h3>
 		<div><?php
 			$base = array('citrus' => array( "orange") , 'berries' => array("blackberry", "raspberry"), );
 			$replacements = array('citrus' => array('pineapple'), 'berries' => array('blueberry'));
@@ -386,7 +386,7 @@
 		
 		
 		
-		<h3>array_reverse() <span class="badge">4+</span></h3>
+		<h3><code>array</code> array_reverse(<code>array $array, [, bool $preserve_keys = false]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$array = array("php", 4.0, array("green", "red"));
 			var_dump(array_reverse($array));
@@ -395,7 +395,7 @@
 		
 		
 		
-		<h3>array_search() <span class="badge">4.0.5+</span></h3>
+		<h3><code>mixed</code> array_search(<code>mixed $needle, array $haystack [, bool $strict = false]</code>) <span class="badge">4.0.5+</span></h3>
 		<div><?php
 			$array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red');
 			var_dump(array_search('green', $array)); // 2
@@ -404,24 +404,24 @@
 		
 		
 		
-		<h3>array_shift(&amp;...) <span class="badge">4+</span></h3>
+		<h3><code>mixed</code> array_shift(<code>array &amp; $array</code>) <span class="badge">4+</span></h3>
 		
 		
 		
-		<h3>array_slide() <span class="badge">4+</span></h3>
+		<h3><code>array</code>array_slide(<code>array $array, int $offset [, int $length = null [, bool $preserve_keys = false]]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$input = array("a", "b", "c", "d", "e");
 			var_dump(array_slice($input, 2));      // returns "c", "d", and "e"
 			var_dump(array_slice($input, -2, 1));  // returns "d"
 			var_dump(array_slice($input, 0, 3));   // returns "a", "b", and "c"
-
+			
 			var_dump(array_slice($input, 2, -1));  //  returns "c", "d"
 			var_dump(array_slice($input, 2, -1, true));
 		?></div>
 		
 		
 		
-		<h3>array_splice(&amp;...) <span class="badge">4+</span></h3>
+		<h3><code>array</code> array_splice(<code>array &$input, int $offset [, int $length [, mixed $replacement = array()]]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$input = array("red", "green", "blue", "yellow");
 			array_splice($input, 2);
@@ -450,7 +450,7 @@
 		
 		
 		
-		<h3>array_sum() <span class="badge">4.0.4+</span></h3>
+		<h3><code>number</code> array_sum(<code>array $array</code>) <span class="badge">4.0.4+</span></h3>
 		<div><?php
 			$a = array(2, 4, 6, 8);
 			var_dump(array_sum($a));
@@ -458,7 +458,7 @@
 		
 		
 		
-		<h3>array_udiff_assoc() <span class="badge">5+</span></h3>
+		<h3><code>array</code> array_udiff_assoc(<code>array $array1, array $array2 [, array $...], callable $value_compare_func</code>) <span class="badge">5+</span></h3>
 		<div><?php
 			class cr {
 				private $priv_member;
@@ -478,27 +478,27 @@
 		
 		
 		
-		<h3>array_udiff_uassoc() <span class="badge">5+</span></h3>
+		<h3><code>array</code> array_udiff_uassoc(<code>array $array1, array $array2 [, array $...], callable $value_compare_func, callable $key_compare_func</code>) <span class="badge">5+</span></h3>
 		
 		
 		
-		<h3>array_udiff() <span class="badge">5+</span></h3>
+		<h3><code>array</code> array_udiff(<code>array $array1, array $array2 [, array $...], callable $value_compare_func</code>) <span class="badge">5+</span></h3>
 		
 		
 		
-		<h3>array_uintersect_assoc() <span class="badge">5+</span></h3>
+		<h3><code>array</code> array_uintersect_assoc(<code>array $array1, array $array2 [, array $...], callable $value_compare_func</code>) <span class="badge">5+</span></h3>
 		
 		
 		
-		<h3>array_uintersect_uassoc() <span class="badge">5+</span></h3>
+		<h3><code>array</code> array_uintersect_uassoc(<code>array $array1, array $array2 [, array $...], callable $value_compare_func, callable $key_compare_func</code>) <span class="badge">5+</span></h3>
 		
 		
 		
-		<h3>array_uintersect() <span class="badge">5+</span></h3>
+		<h3><code>array</code> array_uintersect(<code>array $array1, array $array2 [, array $...], callable $value_compare_func</code>) <span class="badge">5+</span></h3>
 		
 		
 		
-		<h3>array_unique() <span class="badge">4.0.1+</span></h3>
+		<h3><code>array</code> array_unique(<code>array $array [, int $sort_falgs = SORT_STRING]</code>) <span class="badge">4.0.1+</span></h3>
 		<div><?php
 			$input = [
 				'a' => 'red',
@@ -516,7 +516,7 @@
 		
 		
 		
-		<h3>array_unshift() <span class="badge">4+</span></h3>
+		<h3><code>int</code> array_unshift(<code>array &amp;$array, mixed $value1 [, mixed $...]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$queue = ['orange', 'banana'];
 			var_dump(array_unshift($queue, 'apple', 'raspberry'), $queue);
@@ -525,7 +525,7 @@
 		
 		
 		
-		<h3>array_values() <span class="badge">4+</span></h3>
+		<h3><code>array</code> array_values(<code>array $array</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$array = ['size' => 'xl', 'color' => 'gold'];
 			var_dump(array_values($array));
@@ -533,7 +533,7 @@
 		
 		
 		
-		<h3>array_walk_recursive() <span class="badge">5+</span></h3>
+		<h3><code>bool</code> array_walk_recursive(<code>array &$array, callable $callback [, mixed $userdata = null]</code>) <span class="badge">5+</span></h3>
 		<div><?php
 			$sweet = ['a' => 'apple', 'b' => 'banana'];
 			$fruits = ['sweet' => $sweet, 'sour' => 'lemon'];
@@ -545,7 +545,7 @@
 		
 		
 		
-		<h3>array_walk() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> array_walk(<code>array &amp;$array, callable $callback [, mixed $userdata = null]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
 			function test_alter(&$item1, $key, $prefix) {
@@ -567,11 +567,11 @@
 		
 		
 		
-		<h3>array() <span class="badge">4+</span> [] <span class="badge">5.4+</span></h3>
+		<h3><code>array</code> array(<code>mixed $...</code>) <span class="badge">4+</span> [] <span class="badge">5.4+</span></h3>
 		
 		
 		
-		<h3>arsort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> arsort(<code>array &amp;$array [, int $sort_flags = SORT_REGULAR]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
 			var_dump(arsort($fruits), $fruits);
@@ -579,7 +579,7 @@
 		
 		
 		
-		<h3>asort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> asort(<code>array &amp;$array [, int $sort_flags = SORT_REGULAR]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
 			var_dump(asort($fruits), $fruits);
@@ -587,7 +587,7 @@
 		
 		
 		
-		<h3>compact() <span class="badge">4+</span></h3>
+		<h3><code>array</code> compact(<code>mixed $varname1 [, mixed $...]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$city  = "San Francisco";
 			$state = "CA";
@@ -601,7 +601,7 @@
 		
 		
 		
-		<h3>count() <span class="badge">4+</span> &amp; Countable <span class="badge">5.1+</span></h3>
+		<h3><code>int</code> count(<code>mixed $array_or_countable [, int $mode = COUNT_NORMAL]</code>) <span class="badge">4+</span> &amp; Countable <span class="badge">5.1+</span></h3>
 		<div><?php
 			$food = ['fruits' => ['orange', 'banana'],
 					'viggie',
@@ -611,11 +611,11 @@
 		
 		
 		
-		<h3>current() <span class="badge">4+</span></h3>
+		<h3><code>mixed</code> current(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		
 		
 		
-		<h3>each() <span class="badge">4+</span></h3>
+		<h3><code>array</code> each(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$fruit = array('a' => 'apple', 'b' => 'banana', 'c' => 'cranberry');
 			reset($fruit);
@@ -627,11 +627,11 @@
 		
 		
 		
-		<h3>end() <span class="badge">4+</span></h3>
+		<h3><code>mixed</code> end(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		
 		
 		
-		<h3>extract() <span class="badge">4+</span></h3>
+		<h3><code>int</code> extract(<code>array &amp;$array [, int $flags = EXTR_OVERWRITE [, string $prefix = null]]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$size = "large";
 			$var_array = array(
@@ -653,7 +653,7 @@
 		
 		
 		
-		<h3>in_array() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> in_array(<code>mixed $needle, array $haystack [, bool $strict = false]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$os = ['mac', 'nt', 'linux'];
 			var_dump($os);
@@ -673,11 +673,11 @@
 		
 		
 		
-		<h3>key() <span class="badge">4+</span></h3>
+		<h3><code>mixed</code> key(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		
 		
 		
-		<h3>krsort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> krsort(<code>array &amp;$array [, int $sort_flags = SORT_REGULAR]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$fruits = array("d"=>"lemon", "a"=>"orange", "b"=>"banana", "c"=>"apple");
 			var_dump(krsort($fruits), $fruits);
@@ -685,7 +685,7 @@
 		
 		
 		
-		<h3>ksort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> ksort(<code>array &amp;$array [, int $sort_flags = SORT_REGULAR]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$fruits = array("d"=>"lemon", "a"=>"orange", "b"=>"banana", "c"=>"apple");
 			var_dump(ksort($fruits), $fruits);
@@ -693,7 +693,7 @@
 		
 		
 		
-		<h3>list() <span class="badge">4+</span></h3>
+		<h3><code>array</code> list(<code>mixed $var1 [, mixed $...]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$info = array('coffee', 'brown', 'caffeine');
 			list($drink, , $power) = $info;
@@ -702,7 +702,7 @@
 		
 		
 		
-		<h3>natcasesort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> natcasesort(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$array1 = array('IMG0.png', 'img12.png', 'img10.png', 'img2.png', 'img1.png', 'IMG3.png');
 			var_dump(natcasesort($array1), $array1);
@@ -710,7 +710,7 @@
 		
 		
 		
-		<h3>natsort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> natsort(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$negative = array('-5','3','-2','0','-1000','09','1');
 			var_dump($negative, natsort($negative), $negative);
@@ -718,7 +718,7 @@
 		
 		
 		
-		<h3>next() <span class="badge">4+</span></h3>
+		<h3><code>mixed</code> next(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		
 		
 		
@@ -726,11 +726,11 @@
 		
 		
 		
-		<h3>prev() <span class="badge">4+</span></h3>
+		<h3><code>mixed</code> prev(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		
 		
 		
-		<h3>range() <span class="badge">4+</span></h3>
+		<h3><code>array</code> range(<code>mixed $start, mixed $send [, number $step = 1]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			var_dump(
 				range(0, 101, 10),
@@ -741,15 +741,15 @@
 		
 		
 		
-		<h3>reset() <span class="badge">4+</span></h3>
+		<h3><code>mixed</code> reset(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		
 		
 		
-		<h3>rsort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> rsort(<code>array &amp;$array [, int $sort_flags = SORT_REGULAR]</code>) <span class="badge">4+</span></h3>
 		
 		
 		
-		<h3>shuffle() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> shuffle(<code>array &amp;$array</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$numbers = range(10, 20);
 			var_dump(shuffle($numbers), $numbers);
@@ -761,7 +761,7 @@
 		
 		
 		
-		<h3>sort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> sort(<code>array &amp;$array [, int $sort_flags = SORT_REGULAR]</code>) <span class="badge">4+</span></h3>
 		<div><?php
 			$fruits = array("lemon", "orange", "banana", "apple");
 			var_dump(sort($fruits), $fruits);
@@ -777,15 +777,15 @@ SORT_LOCALE_STRING <span class="badge">5.0.2+</span>
 		
 		
 		
-		<h3>uasort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> uasort(<code>array &amp;$array, callable $value_compare_func</code>) <span class="badge">4+</span></h3>
 		
 		
 		
-		<h3>uksort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> uksort(<code>array &amp;$array, callable $key_compare_func</code>) <span class="badge">4+</span></h3>
 		
 		
 		
-		<h3>usort() <span class="badge">4+</span></h3>
+		<h3><code>bool</code> usort(<code>array &amp;$array, callable $value_compare_func</code>) <span class="badge">4+</span></h3>
 		
 		
 		
