@@ -30,6 +30,10 @@ END;
 Hello {$world}!
 END
 ); // Important!!!
+			var_dump(<<<"END"
+Hello {$world}!
+END
+); // Important!!!
 		?></div>
 		
 		

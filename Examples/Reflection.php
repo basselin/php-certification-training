@@ -4,6 +4,16 @@
  * @version PHP 5+
  */
 
+function myFunction($param1 = 'World')
+{
+    return "Hello $param1!";
+}
+
+var_dump(get_defined_functions()['user']);
+var_dump(ReflectionFunction::export('myFunction', true));
+
+echo '<hr />';
+
 class Person
 {
     public $name;
