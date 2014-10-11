@@ -20,3 +20,15 @@ while (list($v, $k) = each($colors)) {
     echo $v;
 }
 
+
+
+$values = [
+    15,
+    12,
+    "15",
+    34,
+    15 => 25,
+];
+
+var_dump($values, array_search('15', $values));
+
