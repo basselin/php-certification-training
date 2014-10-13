@@ -1,6 +1,6 @@
 <?php
 
-// http://php.net/manual/en/language.types.string.php HEREDOC
+// http://php.net/manual/en/language.types.string.php
 // http://php.net/manual/en/language.types.array.php
 // http://php.net/manual/en/language.functions.php
 // http://php.net/manual/en/language.operators.increment.php
