@@ -35,4 +35,5 @@
 // http://en.wikipedia.org/wiki/Cross-site_request_forgery
 // http://php.net/manual/en/security.database.sql-injection.php
 // http://php.net/manual/en/function.htmlentities.php & +
+// http://regexcrossword.com/
 
