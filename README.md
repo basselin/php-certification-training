@@ -3,6 +3,7 @@
 ### ZCE
 
 * https://www.zend.com/en/services/certification/php-5-certification
+* https://www.zend.com/en/yellow-pages/ZEND026072 (me ;)
 
 
 ### Guide links
@@ -19,4 +20,3 @@
 * http://www.zendexam.com
 * http://fr.slideshare.net/carlosbuenosvinos/zend-php-53-demo-certification-test
 * http://www.lornajane.net/posts/2014/zend-certified-php-developer-5-5
-
